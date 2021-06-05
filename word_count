@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+print "#단어 발생빈도#\n";
+open(WORD, "wordlist.txt");
+
+foreach $word (<WORD>){
+	%count{$word};
+	$count{$word}++;
+}
+foreach $word (<WORD>){
+        $count{$word}++;
+}
+
+while(($key, $val) = each %count){
+	printf "%s >  %d counted\n", $key, $val;
+}
+
